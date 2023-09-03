@@ -1,14 +1,17 @@
 import './App.css'
-import Header from './components/Header'
-import HeroSection from './components/Hero'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import IndexPage from './pages/index.jsx'
+import ContactPage from './pages/contact'
 
 function App() {
 
   return (
-    <>
-    <Header />
-    <HeroSection />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<IndexPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </Router>
   )
 }
 
